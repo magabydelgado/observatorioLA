@@ -38,8 +38,7 @@ import * as MultiCharts from "fusioncharts/fusioncharts.zoomline";
 
 // * mapas
 import * as WorldMap from 'fusioncharts/maps/fusioncharts.world';
-import * as WorldWithAntarcticaMap from 'fusioncharts/maps/fusioncharts.worldwithantarctica';
-import * as WorldWithCountriesMap from 'fusioncharts/maps/fusioncharts.worldwithcountries';
+// import * as WorldWithCountriesMap from '/assets/mapa/fusioncharts.worldwithcountries';
 
 // * cargar tema de Ocean
 import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
@@ -65,8 +64,6 @@ FusionChartsModule.fcRoot(
   Widgets,
   Maps,
   WorldMap,
-  WorldWithAntarcticaMap,
-  WorldWithCountriesMap,
   Ocean,
   Fint,
   Gammel,
