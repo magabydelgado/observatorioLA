@@ -1,0 +1,240 @@
+<div class="contenedorPrincipal">
+  <main>
+    <div class="main__container">
+
+      <!-- TITULO DEL DASHBOARD -->
+      <div class="row main__title">
+        <div class="col-9">
+          <p class="titulo_principal">Dashboard de Idioma</p>
+        </div>
+        <div class="col-3" style="text-align:end;">
+          <button (click)="showModalDialogDatos()" class="calendario"><i class='bx bx-calendar-alt'></i> 2011-2019</button>
+        </div>
+      </div>
+
+      <div class="row tituloDash">
+        <p>Observatorio de Learning Analytics</p>
+      </div>
+      <!-- TERMINA TITULO DEL DASHBOARD -->
+
+      <!-- VISUALIZACIONES -->
+      <!--      <div class="row contenedor">-->
+      <div class="row">
+        <div class="col-6">
+          <div class="contenedor">
+            <div class="row secondary__title">
+              <div class="col-9">
+                <p>Tipos de publicaciones e idioma</p>
+              </div>
+              <div class="col-3" style="text-align:end;">
+                <div>
+                  <button (click)="showModalDialog1()" class="informa"><i class='bx bx-plus'
+                                                                          style='font-size:12px;'></i> Info
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <fusioncharts
+                [width]="widthBarrasAgrupadas"
+                [height]="heightBarrasAgrupadas"
+                [type]="typeBarrasAgrupadas"
+                [dataFormat]="dataFormat"
+                [dataSource]="dataSourceBarrasAgrupadas"
+              >
+              </fusioncharts>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-4">
+              <div class="blog-card" style="background: #0C4762;">
+                <div class="row rowIdioma">
+                  <div class="col-6">
+                    <img src="assets/languages.png" class="imgIdioma">
+                  </div>
+                  <div class="col-6">
+                    <div class="row rowCantidad">
+                      195
+                    </div>
+                    <div class="row rowTipoIdioma">
+                      Inglés
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="blog-card" style="background: #0C4762;">
+                <div class="row rowIdioma">
+                  <div class="col-6">
+                    <img src="assets/languages.png" class="imgIdioma">
+                  </div>
+                  <div class="col-6">
+                    <div class="row rowCantidad">
+                      47
+                    </div>
+                    <div class="row rowTipoIdioma">
+                      Español
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="blog-card" style="background: #0C4762;">
+                <div class="row rowIdioma">
+                  <div class="col-6">
+                    <img src="assets/languages.png" class="imgIdioma">
+                  </div>
+                  <div class="col-6">
+                    <div class="row rowCantidad">
+                      41
+                    </div>
+                    <div class="row rowTipoIdioma">
+                      Portugués
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr style="color: #949494; ">
+          <div class="contenedor">
+            <div class="row secondary__title">
+              <div class="col-9">
+                <p>Evolución del número de publicaciones</p>
+              </div>
+              <div class="col-3" style="text-align:end;">
+                <div>
+                  <button (click)="showModalDialog2()" class="informa"><i class='bx bx-plus'
+                                                                          style='font-size:12px;'></i> Info
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <fusioncharts
+                [width]="widthArea"
+                [height]="heightArea"
+                [type]="typeArea"
+                [dataFormat]="dataFormat"
+                [dataSource]="dataSourceArea"
+              >
+              </fusioncharts>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--      </div>-->
+      <!-- TERMINAN VISUALIZACIONES -->
+
+      <!--<div class="ui-g">-->
+      <!--  <div class="card">-->
+      <!--    <h5>Vertical</h5>-->
+      <!--    <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>-->
+      <!--  </div>-->
+      <!--</div>-->
+    </div>
+  </main>
+</div>
+
+<!--Ventana Modal: Tipos de publicaciones e idioma-->
+<p-dialog
+  header="  "
+  [(visible)]="displayModal1"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/idioma.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i> Tipos de publicaciones e idioma</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización muestra el total de publicaciones de cada uno de los tipos
+      (conferencia, revista, taller y capítulo del libro), como se puede observar existe mayor
+      número de publicación de tipo artículos de revistas y conferencias.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0"></p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal1=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<!--Ventana Modal: Evolución del número de publicaciones-->
+<p-dialog
+  header="  "
+  [(visible)]="displayModal2"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/idioma.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i> Evolución del número de publicaciones</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización muestra la evolución que ha tenido cada uno de los idiomas en
+      cuanto al número de publicaciones por año, es interesante resaltar que a partir del año 2017 existe
+      un crecimiento en los artículos escritos en español en comparación con los artículos escritos en portugues.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0"></p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal2=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<!--Ventana Moda: Info sobre los datos-->
+<p-dialog
+  header="  "
+  [(visible)]="displayModalDatos"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/datos.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Observatorio de Learning Analytics</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">El presente dashboard tiene como objetivo informar a la audiencia sobre la evolución que ha
+      tenido el tema de Learning Analytics (LA) en Latinoamérica en los últimos años. Los datos presentados en las siguientes visualizaciones
+      fueron obtenidos mediante una revisión cuantitativa de la literatura a partir del año 2011 al 2019,
+      teniendo como resultado 282 artículos de acuerdo con un modelo multidimensional compuesto por siete dimensiones. Cabe
+      destacar que los datos no se recolectaron, sino que fueron extraídos del artículo denominado
+      “Mapping Learning Analytics initiatives in Latin America”.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <a href="https://www.researchgate.net/publication/340855546_Mapping_Learning_Analytics_initiatives_in_Latin_America" class="botonVentana">Ir al enlace del paper</a>
+    </div>
+  </div>
+</p-dialog>

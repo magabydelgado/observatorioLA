@@ -1,0 +1,146 @@
+<div class="contenedorPrincipal">
+  <main>
+    <div class="main__container">
+
+      <!-- TITULO DEL DASHBOARD -->
+      <div class="row main__title">
+        <div class="col-9">
+          <p class="titulo_principal" >Dashboard Demográfico</p>
+        </div>
+        <div class="col-3" style="text-align:end;">
+          <button (click)="showModalDialogDatos()" class="calendario"><i class='bx bx-calendar-alt'></i> 2011-2019</button>
+        </div>
+      </div>
+
+      <div class="row tituloDash">
+        <p>Observatorio de Learning Analytics</p>
+      </div>
+      <!-- TERMINA TITULO DEL DASHBOARD -->
+
+      <!-- VISUALIZACIONES -->
+      <div class="row contenedor">
+        <div class="row secondary__title">
+          <div class="col-9">
+            <p>Publicaciones por país</p>
+          </div>
+          <div class="col-3" style="text-align:end;">
+            <div>
+              <button (click)="showModalDialog()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+            </div>
+          </div>
+        </div>
+        <hr style="color: #949494; ">
+        <div class="row charts">
+          <div class="col-7">
+            <fusioncharts
+              [width]="width"
+              [height]="height"
+              [type]="type"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSource"
+            ></fusioncharts>
+          </div>
+
+          <div class="col-5 linea">
+            <p class="cuerpo">Detalles</p>
+            <p-table [value]="datosTabla"
+                     [paginator]="true"
+                     [style]="{'font-size':'14px'}"
+                     [rows]="4" [showCurrentPageReport]="true"
+                     styleClass="p-datatable-responsive-demo p-datatable-lg"
+                     [totalRecords]="totalRecords">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th style="width: 75px;">País</th>
+                  <th style="width: 300px;"></th>
+                  <th>N° Publicaciones</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-doc>
+                <tr>
+                  <td>
+                    <span [class]="'flag-icon flag-icon-' + doc.value" [style]="{'font-size':'22px'}"></span>
+                  </td>
+                  <td>
+                    {{doc.acronimo}}
+                    <p-progressBar [value]="doc.nombrePais" [showValue]="false" [style]="{'height':'6px', 'background':'#f1f1f1'}"></p-progressBar>
+                  </td>
+                  <td>
+                    {{doc.numPubli}}
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+      <!-- TERMINAN VISUALIZACIONES -->
+    </div>
+  </main>
+</div>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/dash.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Publicaciones por país</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización muestra la contribución de cada
+      uno de los países con el número de publicaciones relacionadas al ámbito de
+      Learning Analytics en base a la afiliación de los autores.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<!--Ventana Moda: Info sobre los datos-->
+<p-dialog
+  header="  "
+  [(visible)]="displayModalDatos"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/datos.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Observatorio de Learning Analytics</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">El presente dashboard tiene como objetivo informar a la audiencia sobre la evolución que ha
+      tenido el tema de Learning Analytics (LA) en Latinoamérica en los últimos años. Los datos presentados en las siguientes visualizaciones
+      fueron obtenidos mediante una revisión cuantitativa de la literatura a partir del año 2011 al 2019,
+      teniendo como resultado 282 artículos de acuerdo con un modelo multidimensional compuesto por siete dimensiones. Cabe
+      destacar que los datos no se recolectaron, sino que fueron extraídos del artículo denominado
+      “Mapping Learning Analytics initiatives in Latin America”.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <a href="https://www.researchgate.net/publication/340855546_Mapping_Learning_Analytics_initiatives_in_Latin_America" class="botonVentana">Ir al enlace del paper</a>
+    </div>
+  </div>
+</p-dialog>

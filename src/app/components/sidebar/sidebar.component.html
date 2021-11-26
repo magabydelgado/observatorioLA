@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Boxiocns CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="sidebar close">
+  <ul class="nav-links">
+    <li class="list">
+      <a
+        routerLink="demografia"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <i class='bx bx-map-alt'></i>
+      </a>
+      <ul class="sub-menu blank">
+        <li>
+          <a routerLink="demografia">
+            <span class="title"> Demografía</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="conferencias"
+         routerLinkActive="active">
+        <i class='bx bxs-institution'></i>
+      </a>
+      <ul class="sub-menu blank">
+        <li>
+          <a routerLink="conferencias">
+            <span class="title"> Conferencias</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="idioma"
+         routerLinkActive="active">
+        <i class='bx bx-chat'></i>
+      </a>
+      <ul class="sub-menu blank">
+        <li>
+          <a routerLink="idioma">
+            <span class="title"> Idioma</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="modelomulti"
+         routerLinkActive="active">
+        <i class='bx bx-cube'></i>
+      </a>
+      <ul class="sub-menu blank">
+        <li>
+          <a routerLink="modelomulti">
+            <span class="title"> Modelo Multidimensional</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+</body>
+</html>

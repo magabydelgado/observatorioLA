@@ -1,0 +1,478 @@
+<div class="contenedorPrincipal">
+  <main>
+    <div class="main__container">
+
+      <!-- TITULO DEL DASHBOARD -->
+      <div class="row main__title">
+        <div class="col-9">
+          <p class="titulo_principal">Dashboard del Modelo Multidimensional</p>
+        </div>
+        <div class="col-3" style="text-align:end;">
+          <button (click)="showModalDialogDatos()" class="calendario"><i class='bx bx-calendar-alt'></i> 2011-2019</button>
+        </div>
+      </div>
+
+      <div class="row tituloDash">
+        <p>Observatorio de Learning Analytics</p>
+      </div>
+      <!-- TERMINA TITULO DEL DASHBOARD -->
+
+      <!-- VISUALIZACIONES -->
+      <div class="row ">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Niveles de madurez</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog1()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <fusioncharts
+                [width]="widthPie"
+                [height]="heightPie"
+                [type]="typePie"
+                [dataFormat]="dataFormat"
+                [dataSource]="dataSourceMat"
+              >
+              </fusioncharts>
+            </div>
+            <div class="col-6 linea" style="margin-left: -8px">
+              <fusioncharts
+                [width]="widthLinea"
+                [height]="heightLinea"
+                [type]="typeLinea"
+                [dataFormat]="dataFormat"
+                [dataSource]="dataSourceLinea"
+              >
+              </fusioncharts>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Top 5 fuente de datos utilizadas en las publicaciones</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog2()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <fusioncharts
+              [width]="width"
+              [height]="height"
+              [type]="type"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSourceWhat"
+            >
+            </fusioncharts>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Top 5 destinatarios del análisis</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog3()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <fusioncharts
+              [width]="width"
+              [height]="height"
+              [type]="type"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSourceWho"
+            >
+            </fusioncharts>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Top 5 técnicas empleadas durante la investigación</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog4()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <fusioncharts
+              [width]="width"
+              [height]="height"
+              [type]="type"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSourceHow"
+            >
+            </fusioncharts>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Top 5  objetivos del análisis</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog5()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <fusioncharts
+              [width]="width"
+              [height]="height"
+              [type]="type"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSourceWhy"
+            >
+            </fusioncharts>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Publicaciones que abordan cuestiones de ética</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog6()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <fusioncharts
+              [width]="width"
+              [height]="height"
+              [type]="typeDonut"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSourceEtica"
+            >
+            </fusioncharts>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="contenedor">
+          <div class="row secondary__title">
+            <div class="col-9">
+              <p>Tipos de enfoques</p>
+            </div>
+            <div class="col-3" style="text-align:end;">
+              <div>
+                <button (click)="showModalDialog7()" class="informa"><i class='bx bx-plus' style='font-size:12px;'></i>   Info</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <fusioncharts
+              [width]="widthLinea2"
+              [height]="heightLinea2"
+              [type]="typeLinea"
+              [dataFormat]="dataFormat"
+              [dataSource]="dataSourceLinea2"
+            >
+            </fusioncharts>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TERMINAN VISUALIZACIONES -->
+
+</div>
+</main>
+</div>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal1"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/madurez.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Niveles de madurez</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Representa una dimensión del modelo multidimensional, esta dimensión ayuda a comprender
+      el lugar donde se encuentra LATAM en términos de teoría versus práctica en el campo. Los trabajos se
+      han clasificado de acuerdo con lo lejos que se encuentran en el camino para ser un producto útil que
+      pueda ser adoptado en las instituciones educativas. Algo interesante de resaltar es que la
+      mayoría de publicaciones aún se encuentra en una etapa experimental, por ende muy pocos trabajos analizan
+      un producto que ya se encuentra en producción o que se encuentra en etapa de comercialización.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal1=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal2"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/fuente.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Top 5 fuente de datos utilizadas en las publicaciones</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización corresponde a la dimensión What, donde se
+      analiza la fuente de los datos utilizada en los artículos. Como se muestra en
+      el top 5, la mayoría de los artículos se enfocan en Ambientes Virtuales de
+      Aprendizaje (VLE) y datos académicos (Fuentes Institucionales).
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal2=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal3"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/stake.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Top 5 destinatarios del análisis</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización corresponde a la dimensión Who, que
+      trata acerca de los destinatarios del análisis o los que utilizaron los
+      resultados de la investigación. Un aspecto importante a resaltar es que
+      la mayoría de los artículos son de interés para docentes, mientras que
+      las herramientas relacionadas con los estudiantes, solo se tratan en un
+      tercio de los trabajos. Esto indica que los investigadores están más
+      centrados hacia las necesidades institucionales.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal3=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal4"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/how.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Top 5 técnicas empleadas durante la investigación</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización corresponde a la dimensión How, en la
+      cual se da a conocer la metodología utilizada durante la investigación.
+      Algo interesante de resaltar es que las técnicas como: estadísticas, aprendizaje
+      automático y visualización de información son las más utilizadas.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal4=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal5"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/why.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Top 5 objetivos del análisis</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización corresponde a la dimensión Why, que trata de los
+      objetivos de los distintos artículos. Como se puede observar, la reflexión y el
+      seguimiento son uno de los focos de la investigación.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal5=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal6"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/etica.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Publicaciones que abordan cuestiones de ética</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización corresponde a la dimensión que trata acerca de la ética,
+      ya que es un tema importante en la investigación de Learning Analytics.
+      Es importante resaltar que el 84.15% de los artículos no menciona en
+      absoluto cuestiones éticas, mientras que solo el 11.79% las aborda.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal6=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<p-dialog
+  header="  "
+  [(visible)]="displayModal7"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/enfoque.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Tipos de enfoques</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">Esta visualización corresponde a la dimensión que trata acerca del
+      enfoque de la investigación. El gráfico refleja la evolución que ha tenido los
+      distintos tipos de enfoques a lo largo de los años, un aspecto importante de
+      resaltar, es que a partir del año 2012, el enfoque descriptivo tuvo un crecimiento a
+      comparación del resto de enfoques que mantienen una misma tendencia con el pasar del tiempo.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <button (click)="displayModal7=false" class="botonVentana">Entendido</button>
+    </div>
+  </div>
+</p-dialog>
+
+<!--Ventana Moda: Info sobre los datos-->
+<p-dialog
+  header="  "
+  [(visible)]="displayModalDatos"
+  [modal]="true"
+  [style]="{width: '35vw'}"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true">
+  <div class="row">
+    <img src="assets/datos.jpg" class="imgDash">
+  </div>
+  <div class="row descripcionTitulo">
+    <p><i class='bx bxs-dashboard'></i>     Observatorio de Learning Analytics</p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">El presente dashboard tiene como objetivo informar a la audiencia sobre la evolución que ha
+      tenido el tema de Learning Analytics (LA) en Latinoamérica en los últimos años. Los datos presentados en las siguientes visualizaciones
+      fueron obtenidos mediante una revisión cuantitativa de la literatura a partir del año 2011 al 2019,
+      teniendo como resultado 282 artículos de acuerdo con un modelo multidimensional compuesto por siete dimensiones. Cabe
+      destacar que los datos no se recolectaron, sino que fueron extraídos del artículo denominado
+      “Mapping Learning Analytics initiatives in Latin America”.
+    </p>
+  </div>
+  <div class="row descripcionParrafo">
+    <p class="p-m-0">   </p>
+  </div>
+  <div class="wrap contenedorBoton">
+    <div class="item">
+      <a href="https://www.researchgate.net/publication/340855546_Mapping_Learning_Analytics_initiatives_in_Latin_America" class="botonVentana">Ir al enlace del paper</a>
+    </div>
+  </div>
+</p-dialog>
