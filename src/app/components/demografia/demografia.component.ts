@@ -54,38 +54,32 @@ export class DemografiaComponent implements OnInit {
           minvalue: "1",
           maxvalue: "10",
           displayvalue: "1 - 10",
-          code: "#EBF5FB"
+          code: "#d0e1f3"
         },
         {
           minvalue: "10",
           maxvalue: "30",
           displayvalue: "10 - 30",
-          code: "#AED6F1"
+          code: "#a7c9f3"
         },
         {
           minvalue: "30",
           maxvalue: "50",
           displayvalue: "30 - 50",
-          code: "#5DADE2"
+          code: "#7e97dd"
         },
         {
           minvalue: "50",
           maxvalue: "250",
           displayvalue: "50 - 200",
-          code: "#2874A6"
+          code: "#4077ad"
         },
         {
           minvalue: "250",
           maxvalue: "800",
           displayvalue: ">250",
-          code: "#1B4F72"
+          code: "#013473"
         }
-        // {
-        //   minvalue: "200",
-        //   maxvalue: "800",
-        //   displayvalue: "No data availale",
-        //   code: "#BBDEFB"
-        // }
       ]
     },
     data: [
