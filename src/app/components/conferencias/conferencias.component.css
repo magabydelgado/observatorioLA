@@ -161,7 +161,7 @@ a{
   font-size: 17px;
   justify-content: center;
   background: #f7f8fa;
-  color: #a4a4a4;
+  color: #838383;
   box-shadow: 0 6px 8px rgba(0,0,0,.1);
   border-radius: 10px;
   transition: .4s;
@@ -169,6 +169,3 @@ a{
   font-weight: lighter;
   margin-top: 6px;
 }
-
-
-
