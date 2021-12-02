@@ -5,15 +5,14 @@
       <!-- TITULO DEL DASHBOARD -->
       <div class="row main__title">
         <div class="col-9">
-          <p class="titulo_principal">Dashboard del Modelo Multidimensional</p>
+          <p class="titulo_principal">Observatorio de Learning Analytics</p>
         </div>
         <div class="col-3" style="text-align:end;">
-          <button (click)="showModalDialogDatos()" class="calendario"><i class='bx bx-calendar-alt'></i> 2011-2019</button>
+          <button (click)="showModalDialogDatos()" class="modelomulti"><i class='bx bx-plus' style='font-size:12px;'></i>   Info Modelo Multidimensional</button>
         </div>
       </div>
-
       <div class="row tituloDash">
-        <p>Observatorio de Learning Analytics</p>
+        <p>Dashboard del Modelo Multidimensional</p>
       </div>
       <!-- TERMINA TITULO DEL DASHBOARD -->
 
@@ -456,15 +455,16 @@
     <img src="assets/datos.jpg" class="imgDash">
   </div>
   <div class="row descripcionTitulo">
-    <p><i class='bx bxs-dashboard'></i>     Observatorio de Learning Analytics</p>
+    <p><i class='bx bxs-dashboard'></i>     Dashboard del Modelo Multidimensional</p>
   </div>
   <div class="row descripcionParrafo">
-    <p class="p-m-0">El presente dashboard tiene como objetivo informar a la audiencia sobre la evolución que ha
-      tenido el tema de Learning Analytics (LA) en Latinoamérica en los últimos años. Los datos presentados en las siguientes visualizaciones
-      fueron obtenidos mediante una revisión cuantitativa de la literatura a partir del año 2011 al 2019,
-      teniendo como resultado 282 artículos de acuerdo con un modelo multidimensional compuesto por siete dimensiones. Cabe
-      destacar que los datos no se recolectaron, sino que fueron extraídos del artículo denominado
-      “Mapping Learning Analytics initiatives in Latin America”.
+    <p class="p-m-0">Los artículos seleccionados fueron clasificados mediante un modelo multidimensional
+      que consta de 7 dimensiones: fuentes de datos (what), objetivos del análisis (why), técnicas empleadas
+      (how), partes interesadas (who), nivel de madurez (maturity), enfoque de investigación (approach) y
+      la evaluación de si los artículos abordan cuestiones éticas (ethical).
+    </p>
+    <p class="p-m-0">Este modelo multidimensional ha sido utilizado ampliamente como referencia dentro de la comunidad de LA,
+      ya que facilita el análisis profundo de la investigación, en este caso de los 282 artículos encontrados.
     </p>
   </div>
   <div class="row descripcionParrafo">
@@ -472,7 +472,7 @@
   </div>
   <div class="wrap contenedorBoton">
     <div class="item">
-      <a href="https://www.researchgate.net/publication/340855546_Mapping_Learning_Analytics_initiatives_in_Latin_America" class="botonVentana">Ir al enlace del paper</a>
+      <button (click)="displayModalDatos=false" class="botonVentana">Entendido</button>
     </div>
   </div>
 </p-dialog>
